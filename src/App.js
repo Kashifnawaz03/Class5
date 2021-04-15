@@ -1,14 +1,20 @@
-import React from 'react';
+import React , {useState} from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import Parent from 'Parent.js';
+import Parent from'./Parent.js';
+import ValueContext from'./ValueContext';
 
 function App() {
+  //let [number, setNumber] = useState(45);
+  //let value = 78;
+  let value = useState(48);
   return (
-    <div>Hello world
+    <ValueContext.Provider value = {value}>
+      <div>Hello world
       <Parent></Parent>
     </div>
-    
+    </ValueContext.Provider>
+  
     
   );
 }

@@ -1,11 +1,14 @@
-import React from 'react';
+import React , {useContext} from 'react';
+import ValueContext from'./ValueContext';
 
 
 
-function App(props) {
+function Child() {
+    let value = useContext(ValueContext);
+    let updateValue = value[1]
   return (
-    <div>
-     <Child></Child>
+    <div>Child Number {value [0]}
+      <button onClick={()=>{updateValue(++value[0])}}>Update Value</button>
     </div>
     
     
